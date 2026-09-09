@@ -1772,3 +1772,7 @@ body.dark {
 .transferRecipientHint{font-size:10px;color:var(--muted);line-height:1.45}
 #confirmBank{max-width:220px;text-align:right;overflow-wrap:anywhere}
 @media(max-width:650px){.interBankFields{padding:12px}.transferConfirmCard{max-height:88vh}.transferSummary>div{gap:12px}.transferSummary strong{max-width:62%;text-align:right;overflow-wrap:anywhere}}
+
+.toast:not(.show) {
+  display: none;
+}
