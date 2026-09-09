@@ -1548,6 +1548,15 @@ body.dark {
 
   .toast.show { transform: translateY(0); }
 
+  /* Mobile login success: message only, with no green container/background. */
+  .toast.login-success-toast {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+    color: var(--g900) !important;
+  }
+
   .transferConfirmCard h2 { padding-right: 40px; }
 
   .transferSummary {
@@ -1757,6 +1766,9 @@ body.dark {
     background: linear-gradient(135deg, #063820, #075f34 58%, #0b8f48);
   }
 }
-.toast:not(.show) {
-  display: none;
-}
+
+.interBankFields{display:grid;gap:13px;padding:14px;border:1px solid var(--border);border-radius:12px;background:var(--g50)}
+.interBankFields.hidden{display:none!important}
+.transferRecipientHint{font-size:10px;color:var(--muted);line-height:1.45}
+#confirmBank{max-width:220px;text-align:right;overflow-wrap:anywhere}
+@media(max-width:650px){.interBankFields{padding:12px}.transferConfirmCard{max-height:88vh}.transferSummary>div{gap:12px}.transferSummary strong{max-width:62%;text-align:right;overflow-wrap:anywhere}}

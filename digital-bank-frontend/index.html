@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta name="google-site-verification" content="AylnK3VM1jFXKcptQQb5eBbIQipWCCFKUjuHKaDtmHg" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Digital Bank customer, staff and super admin portal">
@@ -31,7 +30,7 @@
     <aside class="mobileDrawer" id="mobileDrawer" aria-hidden="true" aria-label="Mobile navigation">
         <div class="mobileDrawerHead"><div><span class="eyebrow">DIGITALBANK</span><strong id="mobileDrawerUser">Welcome</strong></div><button class="mobileIconButton drawerClose" id="mobileCloseButton" type="button" aria-label="Close navigation menu">×</button></div>
         <nav class="mobileDrawerNav" id="mobileDrawerNav"></nav>
-        <div class="mobileDrawerBottom"><button class="mobileMenuItem" id="mobileThemeButton" type="button"><span>◐</span><span>Dark mode</span><span class="mobileThemeState" id="mobileThemeState">Off</span></button><button class="mobileMenuItem logoutItem" id="mobileLogoutButton" type="button"><span id="mobileAuthIcon">→</span><span id="mobileAuthLabel">Sign in</span></button></div>
+        <div class="mobileDrawerBottom"><button class="mobileMenuItem" id="mobileThemeButton" type="button"><span>◐</span><span>Dark mode</span><span class="mobileThemeState" id="mobileThemeState">Off</span></button><button class="mobileMenuItem logoutItem" id="mobileLogoutButton" type="button"><span>↪</span><span>Logout</span></button></div>
     </aside>
     <nav class="mobileBottomNav" id="mobileBottomNav" aria-label="Mobile primary navigation"></nav>
 
@@ -720,12 +719,52 @@
 
 
                                 <label>
+                                    Transfer type
+                                    <select name="transferType" id="transferType" required>
+                                        <option value="intra_bank">Within Digital Bank</option>
+                                        <option value="inter_bank">To another bank</option>
+                                    </select>
+                                </label>
+
+
+                                <label>
                                     Recipient account
                                     <input
                                         name="to"
+                                        id="transferRecipientAccount"
+                                        inputmode="numeric"
+                                        autocomplete="off"
                                         required
                                     >
                                 </label>
+
+
+                                <div id="interBankFields" class="interBankFields hidden">
+                                    <label>
+                                        Recipient bank code
+                                        <input
+                                            name="recipientBankCode"
+                                            id="recipientBankCode"
+                                            inputmode="numeric"
+                                            autocomplete="off"
+                                            placeholder="e.g. 058"
+                                        >
+                                    </label>
+
+                                    <label>
+                                        Recipient bank name
+                                        <input
+                                            name="recipientBankName"
+                                            id="recipientBankName"
+                                            autocomplete="organization"
+                                            placeholder="e.g. GTBank"
+                                        >
+                                    </label>
+
+                                    <div class="transferRecipientHint">
+                                        The recipient will be verified before the transfer is sent.
+                                    </div>
+                                </div>
 
 
                                 <label>
@@ -1870,7 +1909,9 @@
             <h2>Confirm transfer</h2>
             <p class="muted">Please review the details before sending.</p>
             <div class="transferSummary">
+                <div><span>Transfer type</span><strong id="confirmTransferType">—</strong></div>
                 <div><span>Recipient</span><strong id="confirmRecipient">—</strong></div>
+                <div><span>Bank</span><strong id="confirmBank">—</strong></div>
                 <div><span>Account</span><strong id="confirmAccount">—</strong></div>
                 <div><span>Amount</span><strong id="confirmAmount">—</strong></div>
                 <div><span>Fees</span><strong id="confirmFee">₦ 0.00</strong></div>
