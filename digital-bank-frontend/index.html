@@ -1,0 +1,1890 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Digital Bank customer, staff and super admin portal">
+
+    <title>DigitalBank</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="mobileHeader" id="mobileHeader">
+        <button class="mobileIconButton" id="mobileMenuButton" type="button" aria-label="Open navigation menu" aria-controls="mobileDrawer" aria-expanded="false">☰</button>
+        <a class="mobileBrand" href="#" aria-label="DigitalBank home"><span class="mobileBrandMark">DB</span><span>Digital<span>Bank</span></span></a>
+        <button class="mobileIconButton" id="mobileProfileButton" type="button" aria-label="Open profile">◉</button>
+    </div>
+    <div class="mobileBackdrop" id="mobileBackdrop" aria-hidden="true"></div>
+    <aside class="mobileDrawer" id="mobileDrawer" aria-hidden="true" aria-label="Mobile navigation">
+        <div class="mobileDrawerHead"><div><span class="eyebrow">DIGITALBANK</span><strong id="mobileDrawerUser">Welcome</strong></div><button class="mobileIconButton drawerClose" id="mobileCloseButton" type="button" aria-label="Close navigation menu">×</button></div>
+        <nav class="mobileDrawerNav" id="mobileDrawerNav"></nav>
+        <div class="mobileDrawerBottom"><button class="mobileMenuItem" id="mobileThemeButton" type="button"><span>◐</span><span>Dark mode</span><span class="mobileThemeState" id="mobileThemeState">Off</span></button><button class="mobileMenuItem logoutItem" id="mobileLogoutButton" type="button"><span id="mobileAuthIcon">→</span><span id="mobileAuthLabel">Sign in</span></button></div>
+    </aside>
+    <nav class="mobileBottomNav" id="mobileBottomNav" aria-label="Mobile primary navigation"></nav>
+
+
+    <div id="toast" class="toast"></div>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+        <a class="brand" href="#">
+            <b>DB</b>
+            <span>Digital<span>Bank</span></span>
+        </a>
+
+        <!-- PUBLIC NAVIGATION -->
+        <nav id="publicNav">
+
+            <a href="#features">Features</a>
+            <a href="#security">Security</a>
+
+            <button class="theme" id="theme">◐</button>
+
+            <button class="btn primary" data-modal="login">
+                Sign in
+            </button>
+
+            <button class="btn outline" data-modal="register">
+                Create account
+            </button>
+
+        </nav>
+
+        <!-- SESSION NAVIGATION -->
+        <nav id="sessionNav" class="hidden">
+
+            <button class="theme" id="theme2">◐</button>
+
+            <span id="sessionName"></span>
+
+            <button class="btn outline" id="logout">
+                Logout
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ========================================= -->
+        <!-- LANDING PAGE -->
+        <!-- ========================================= -->
+
+        <section id="landing" class="view active">
+
+            <!-- HERO -->
+            <div class="hero wrap">
+
+                <div class="heroText">
+
+                    <span class="eyebrow">
+                        MODERN BANKING, BUILT AROUND YOU
+                    </span>
+
+                    <h1>
+                        Bank smarter.<br>
+                        <em>Move money</em> with confidence.
+                    </h1>
+
+                    <p>
+                        Manage accounts, identity verification, transfers,
+                        balances and transactions from one secure digital
+                        banking portal.
+                    </p>
+
+                    <div class="actions">
+
+                        <button
+                            class="btn primary big"
+                            data-modal="register"
+                        >
+                            Get started →
+                        </button>
+
+                        <button
+                            class="btn ghost big"
+                            data-modal="login"
+                        >
+                            Sign in
+                        </button>
+
+                    </div>
+
+                    <div class="trust">
+                        ✓ Secure authentication　 ✓ Role-based access　 ✓ Responsive experience
+                    </div>
+
+                </div>
+
+
+                <div class="heroArt">
+
+                    <div class="orb"></div>
+
+                    <div class="bankCard">
+
+                        <div class="cardTop">
+                            <b>DigitalBank</b>
+                            <b>VISA</b>
+                        </div>
+
+                        <div class="chip"></div>
+
+                        <div class="cardNo">
+                            ••••　••••　••••　4821
+                        </div>
+
+                        <div class="cardBottom">
+                            <small>ACCOUNT HOLDER</small>
+                            <b>YOUR NAME</b>
+                        </div>
+
+                    </div>
+
+
+                    <div class="float balance">
+
+                        <small>Available balance</small>
+
+                        <b>₦ 245,800.00</b>
+
+                        <span>
+                            +8.4% this month
+                        </span>
+
+                    </div>
+
+
+                    <div class="float transfer">
+
+                        <b>↗</b>
+
+                        <div>
+                            <small>Transfer</small>
+                            <strong>Successful</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FEATURES -->
+            <section id="features" class="wrap section">
+
+                <div class="sectionHead">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            EVERYTHING IN ONE PLACE
+                        </span>
+
+                        <h2>
+                            Built for every role.
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Customers, staff, admins and the super admin
+                        each get the tools their role requires.
+                    </p>
+
+                </div>
+
+
+                <div class="featureGrid">
+
+                    <article>
+
+                        <i>₦</i>
+
+                        <h3>
+                            Customer Banking
+                        </h3>
+
+                        <p>
+                            Accounts, transfers, balances and transaction history.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <i>✓</i>
+
+                        <h3>
+                            Identity & KYC
+                        </h3>
+
+                        <p>
+                            BVN and NIN registration and validation flows.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <i>◈</i>
+
+                        <h3>
+                            Staff Portal
+                        </h3>
+
+                        <p>
+                            Review customers, accounts, balances and transactions.
+                        </p>
+
+                    </article>
+
+
+                    <article>
+
+                        <i>◆</i>
+
+                        <h3>
+                            Administration
+                        </h3>
+
+                        <p>
+                            Manage staff and admins according to role.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- SECURITY -->
+            <section id="security" class="security">
+
+                <div class="wrap">
+
+                    <span class="eyebrow">
+                        SECURITY FIRST
+                    </span>
+
+                    <h2>
+                        Your access is role-aware.
+                    </h2>
+
+                    <p>
+                        JWT authentication protects customer and staff sessions,
+                        while management actions are restricted by role.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- CUSTOMER DASHBOARD -->
+        <!-- ========================================= -->
+
+        <section id="customer" class="view dashboard">
+
+            <div class="layout">
+
+                <!-- CUSTOMER SIDEBAR -->
+                <aside class="side">
+
+                    <b>Customer Portal</b>
+
+                    <button
+                        class="sideLink active"
+                        data-panel="c-overview"
+                    >
+                        Overview
+                    </button>
+
+                    <button
+                        class="sideLink"
+                        data-panel="c-accounts"
+                    >
+                        My Accounts
+                    </button>
+
+                    <button
+                        class="sideLink"
+                        data-panel="c-identity"
+                    >
+                        BVN / NIN
+                    </button>
+
+                    <button
+                        class="sideLink"
+                        data-panel="c-transfer"
+                    >
+                        Transfer
+                    </button>
+
+                    <button
+                        class="sideLink"
+                        data-panel="c-enquiry"
+                    >
+                        Name Enquiry
+                    </button>
+
+                    <button
+                        class="sideLink"
+                        data-panel="c-balance"
+                    >
+                        Balance
+                    </button>
+
+                    <button
+                        class="sideLink"
+                        data-panel="c-transactions"
+                    >
+                        Transactions
+                    </button>
+
+                    <button
+                        class="sideLink"
+                        data-panel="c-profile"
+                    >
+                        Profile
+                    </button>
+
+                </aside>
+
+
+                <!-- CUSTOMER MAIN -->
+                <div class="main">
+
+                    <div class="dashHead">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                CUSTOMER DASHBOARD
+                            </span>
+
+                            <h1 id="cgreet">
+                                Welcome
+                            </h1>
+
+                        </div>
+
+                        <button
+                            class="btn outline small"
+                            id="cRefresh"
+                        >
+                            Refresh
+                        </button>
+
+                    </div>
+
+
+                    <!-- CUSTOMER OVERVIEW -->
+                    <div id="mobileBalanceHero" class="mobileBalanceHero">
+                        <div class="mobileBalanceTop"><span>AVAILABLE BALANCE</span><button id="mobileBalanceToggle" type="button" aria-label="Show balance">◉</button></div>
+                        <strong id="mobileBalanceValue" data-visible="false">₦ ••••••</strong>
+                        <div class="mobileBalanceBottom"><span id="mobileBalanceAccount">Account ••••</span><span>Available now</span></div>
+                    </div>
+
+                    <div
+                        id="c-overview"
+                        class="panel active"
+                    >
+
+                        <div class="metrics">
+
+                            <div>
+
+                                <small>
+                                    Total accounts
+                                </small>
+
+                                <b id="mAccounts">
+                                    —
+                                </b>
+
+                                <span>
+                                    Linked to profile
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    Transactions
+                                </small>
+
+                                <b id="mTransactions">
+                                    —
+                                </b>
+
+                                <span>
+                                    Recorded activity
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    Identity
+                                </small>
+
+                                <b id="mVerified">
+                                    Pending
+                                </b>
+
+                                <span>
+                                    BVN status
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="grid2">
+
+                            <div class="card">
+
+                                <h3>
+                                    Quick actions
+                                </h3>
+
+                                <div class="quick">
+
+                                    <button data-go="c-transfer">
+                                        Send money
+                                    </button>
+
+                                    <button data-go="c-balance">
+                                        Check balance
+                                    </button>
+
+                                    <button data-go="c-identity">
+                                        Verify identity
+                                    </button>
+
+                                    <button data-go="c-accounts">
+                                        View accounts
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="card">
+
+                                <h3>
+                                    Recent transactions
+                                </h3>
+
+                                <div id="recent"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CUSTOMER ACCOUNTS -->
+                    <div
+                        id="c-accounts"
+                        class="panel"
+                    >
+
+                        <div class="card">
+
+                            <div class="title">
+
+                                <h2>
+                                    My accounts
+                                </h2>
+
+                                <button
+                                    class="btn primary small"
+                                    data-modal="account"
+                                >
+                                    Create account
+                                </button>
+
+                            </div>
+
+                            <div id="accounts"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CUSTOMER IDENTITY -->
+                    <div
+                        id="c-identity"
+                        class="panel"
+                    >
+
+                        <div class="grid2">
+
+                            <!-- REGISTER BVN -->
+                            <div class="card">
+
+                                <h2>
+                                    Register BVN
+                                </h2>
+
+                                <form
+                                    id="insertBvn"
+                                    class="form"
+                                >
+
+                                    <label>
+                                        BVN
+                                        <input
+                                            name="bvn"
+                                            maxlength="11"
+                                            required
+                                        >
+                                    </label>
+
+
+                                    <label>
+                                        First name
+                                        <input
+                                            name="firstName"
+                                            required
+                                        >
+                                    </label>
+
+
+                                    <label>
+                                        Last name
+                                        <input
+                                            name="lastName"
+                                            required
+                                        >
+                                    </label>
+
+
+                                    <label>
+                                        Date of birth
+                                        <input
+                                            type="date"
+                                            name="dob"
+                                            required
+                                        >
+                                    </label>
+
+
+                                    <label>
+                                        Phone
+                                        <input
+                                            name="phone"
+                                            required
+                                        >
+                                    </label>
+
+
+                                    <button
+                                        class="btn primary"
+                                        type="submit"
+                                    >
+                                        Register BVN
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+
+                            <!-- VALIDATE BVN/NIN -->
+                            <div class="card">
+
+                                <h2>
+                                    Validate BVN
+                                </h2>
+
+                                <form
+                                    id="validateBvn"
+                                    class="form"
+                                >
+
+                                    <label>
+                                        BVN
+                                        <input
+                                            name="bvn"
+                                            maxlength="11"
+                                            required
+                                        >
+                                    </label>
+
+
+                                    <button
+                                        class="btn primary"
+                                        type="submit"
+                                    >
+                                        Validate BVN
+                                    </button>
+
+                                </form>
+
+
+                                <hr>
+
+
+                                <h2>
+                                    Validate NIN
+                                </h2>
+
+                                <form
+                                    id="validateNin"
+                                    class="form"
+                                >
+
+                                    <label>
+                                        NIN
+                                        <input
+                                            name="nin"
+                                            required
+                                        >
+                                    </label>
+
+
+                                    <button
+                                        class="btn primary"
+                                        type="submit"
+                                    >
+                                        Validate NIN
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TRANSFER -->
+                    <div
+                        id="c-transfer"
+                        class="panel"
+                    >
+
+                        <div class="card narrow">
+
+                            <h2>
+                                Transfer money
+                            </h2>
+
+                            <form
+                                id="transferForm"
+                                class="form"
+                            >
+
+                                <label>
+                                    From account
+                                    <input
+                                        name="from"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Recipient account
+                                    <input
+                                        name="to"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Amount (₦)
+                                    <input
+                                        type="number"
+                                        min="1"
+                                        step="0.01"
+                                        name="amount"
+                                        required
+                                    >
+                                </label>
+
+
+                                <button
+                                    class="btn primary"
+                                    type="submit"
+                                >
+                                    Send transfer
+                                </button>
+
+                            </form>
+
+
+                            <div
+                                id="transferResult"
+                                class="result hidden"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NAME ENQUIRY -->
+                    <div
+                        id="c-enquiry"
+                        class="panel"
+                    >
+
+                        <div class="card narrow">
+
+                            <h2>
+                                Account name enquiry
+                            </h2>
+
+                            <form
+                                id="enquiryForm"
+                                class="form"
+                            >
+
+                                <label>
+                                    Account number
+                                    <input
+                                        name="accountNo"
+                                        required
+                                    >
+                                </label>
+
+
+                                <button
+                                    class="btn primary"
+                                    type="submit"
+                                >
+                                    Find account
+                                </button>
+
+                            </form>
+
+
+                            <div
+                                id="enquiryResult"
+                                class="result hidden"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BALANCE -->
+                    <div
+                        id="c-balance"
+                        class="panel"
+                    >
+
+                        <div class="card">
+
+                            <div class="title">
+
+                                <div>
+
+                                    <span class="eyebrow">
+                                        LIVE ACCOUNT BALANCES
+                                    </span>
+
+                                    <h2>
+                                        Your balances
+                                    </h2>
+
+                                </div>
+
+                                <button
+                                    class="btn outline small"
+                                    data-go="c-accounts"
+                                >
+                                    Manage accounts
+                                </button>
+
+                            </div>
+
+
+                            <p class="muted">
+                                Your account balances are displayed automatically.
+                                You do not need to enter an account number or
+                                integration token.
+                            </p>
+
+
+                            <div id="accountsBalancePanel"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TRANSACTIONS -->
+                    <div
+                        id="c-transactions"
+                        class="panel"
+                    >
+
+                        <div class="card">
+
+                            <div class="title">
+
+                                <h2>
+                                    My transactions
+                                </h2>
+
+                                <button
+                                    class="btn outline small"
+                                    id="txRefresh"
+                                >
+                                    Refresh
+                                </button>
+
+                            </div>
+
+
+                            <div id="transactions"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PROFILE -->
+                    <div
+                        id="c-profile"
+                        class="panel"
+                    >
+
+                        <div class="card narrow">
+
+                            <h2>
+                                Profile
+                            </h2>
+
+                            <div id="profile"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================= -->
+        <!-- STAFF DASHBOARD -->
+        <!-- ========================================= -->
+
+        <section id="staff" class="view dashboard">
+
+            <div class="layout">
+
+                <!-- STAFF SIDEBAR -->
+                <aside class="side">
+
+                    <b>
+                        Staff Portal
+                    </b>
+
+
+                    <button
+                        class="sideLink active"
+                        data-panel="s-overview"
+                    >
+                        Overview
+                    </button>
+
+
+                    <button
+                        class="sideLink"
+                        data-panel="s-customers"
+                    >
+                        Customers
+                    </button>
+
+
+                    <button
+                        class="sideLink"
+                        data-panel="s-tx"
+                    >
+                        Transactions
+                    </button>
+
+
+                    <button
+                        class="sideLink super"
+                        data-panel="s-admin-tx"
+                    >
+                        All Transactions
+                    </button>
+
+
+                    <button
+                        class="sideLink management"
+                        data-panel="s-staff"
+                    >
+                        Staff Management
+                    </button>
+
+
+                    <button
+                        class="sideLink management"
+                        data-panel="s-create"
+                    >
+                        Create Staff
+                    </button>
+
+
+                    <button
+                        class="sideLink super"
+                        data-panel="s-admin"
+                    >
+                        Create Admin
+                    </button>
+
+                </aside>
+
+
+                <!-- STAFF MAIN -->
+                <div class="main">
+
+                    <div class="dashHead">
+
+                        <div>
+
+                            <span
+                                class="eyebrow"
+                                id="roleLabel"
+                            >
+                                STAFF DASHBOARD
+                            </span>
+
+                            <h1 id="sgreet">
+                                Welcome
+                            </h1>
+
+                        </div>
+
+
+                        <button
+                            class="btn outline small"
+                            id="sRefresh"
+                        >
+                            Refresh
+                        </button>
+
+                    </div>
+
+
+                    <!-- STAFF OVERVIEW -->
+                    <div
+                        id="s-overview"
+                        class="panel active"
+                    >
+
+                        <div class="metrics">
+
+                            <div>
+
+                                <small>
+                                    Role
+                                </small>
+
+                                <b id="roleMetric">
+                                    —
+                                </b>
+
+                                <span>
+                                    Current access level
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    Status
+                                </small>
+
+                                <b class="positive">
+                                    Active
+                                </b>
+
+                                <span>
+                                    Authenticated session
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <small>
+                                    Portal
+                                </small>
+
+                                <b>
+                                    Secure
+                                </b>
+
+                                <span>
+                                    JWT protected
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="card">
+
+                            <h2>
+                                Staff tools
+                            </h2>
+
+                            <p class="muted">
+                                Use the navigation to review customers and
+                                transactions. Admins and the super admin also
+                                have management controls.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CUSTOMERS -->
+                    <div
+                        id="s-customers"
+                        class="panel"
+                    >
+
+                        <div class="card">
+
+                            <div class="title">
+
+                                <div>
+
+                                    <span class="eyebrow">
+                                        CUSTOMER DIRECTORY
+                                    </span>
+
+                                    <h2>
+                                        Customers
+                                        <span
+                                            class="count"
+                                            id="customerCount"
+                                        >
+                                            —
+                                        </span>
+                                    </h2>
+
+                                </div>
+
+
+                                <button
+                                    class="btn outline small"
+                                    id="loadCustomers"
+                                >
+                                    Refresh
+                                </button>
+
+                            </div>
+
+
+                            <p class="muted">
+                                Customer balances are loaded by the backend.
+                                No provider token or account number is entered here.
+                            </p>
+
+
+                            <!--
+                                Customer records and the
+                                Activate / Deactivate / Delete
+                                buttons are generated by app.js here.
+                            -->
+                            <div id="staffCustomers"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TRANSACTION SEARCH -->
+                    <div
+                        id="s-tx"
+                        class="panel"
+                    >
+
+                        <div class="card narrow">
+
+                            <span class="eyebrow">
+                                TRANSACTION SEARCH
+                            </span>
+
+                            <h2>
+                                Transaction lookup
+                            </h2>
+
+                            <p class="muted">
+                                Paste either the transaction ID or the
+                                transaction reference.
+                            </p>
+
+
+                            <form
+                                id="staffTxForm"
+                                class="inline"
+                            >
+
+                                <input
+                                    name="transactionId"
+                                    placeholder="Transaction ID or reference"
+                                    required
+                                >
+
+
+                                <button
+                                    class="btn primary"
+                                    type="submit"
+                                >
+                                    Find transaction
+                                </button>
+
+                            </form>
+
+
+                            <div
+                                id="staffTxResult"
+                                class="result hidden"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ALL TRANSACTIONS -->
+                    <div
+                        id="s-admin-tx"
+                        class="panel"
+                    >
+
+                        <div class="card">
+
+                            <div class="title">
+
+                                <div>
+
+                                    <span class="eyebrow">
+                                        SUPER ADMIN
+                                    </span>
+
+                                    <h2>
+                                        Transaction activity
+                                    </h2>
+
+                                </div>
+
+
+                                <button
+                                    class="btn outline small"
+                                    id="loadAdminTransactions"
+                                >
+                                    Refresh
+                                </button>
+
+                            </div>
+
+
+                            <p class="muted">
+                                Review money moving between customer accounts,
+                                including sender, receiver, amount and status.
+                            </p>
+
+
+                            <div id="adminTransactions"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STAFF MANAGEMENT -->
+                    <div
+                        id="s-staff"
+                        class="panel"
+                    >
+
+                        <div class="card">
+
+                            <div class="title">
+
+                                <div>
+
+                                    <span class="eyebrow">
+                                        ACCESS CONTROL
+                                    </span>
+
+                                    <h2>
+                                        Staff management
+                                    </h2>
+
+                                </div>
+
+
+                                <button
+                                    class="btn outline small"
+                                    id="loadStaff"
+                                >
+                                    Refresh
+                                </button>
+
+                            </div>
+
+
+                            <p class="muted">
+                                Admins can manage staff. The super admin can
+                                also manage admins. Protected accounts cannot
+                                be changed here.
+                            </p>
+
+
+                            <div id="staffTable"></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CREATE STAFF -->
+                    <div
+                        id="s-create"
+                        class="panel"
+                    >
+
+                        <div class="card narrow">
+
+                            <h2>
+                                Create staff
+                            </h2>
+
+
+                            <form
+                                id="createStaff"
+                                class="form two"
+                            >
+
+                                <label>
+                                    First name
+                                    <input
+                                        name="firstName"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Last name
+                                    <input
+                                        name="lastName"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Email
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Phone
+                                    <input
+                                        name="phone"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Password
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        minlength="6"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Department
+                                    <input name="department">
+                                </label>
+
+
+                                <button
+                                    class="btn primary"
+                                    type="submit"
+                                >
+                                    Create staff
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CREATE ADMIN -->
+                    <div
+                        id="s-admin"
+                        class="panel"
+                    >
+
+                        <div class="card narrow">
+
+                            <h2>
+                                Create admin
+                                <span class="badge gold">
+                                    Super admin
+                                </span>
+                            </h2>
+
+
+                            <form
+                                id="createAdmin"
+                                class="form two"
+                            >
+
+                                <label>
+                                    First name
+                                    <input
+                                        name="firstName"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Last name
+                                    <input
+                                        name="lastName"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Email
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Phone
+                                    <input
+                                        name="phone"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Password
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        minlength="6"
+                                        required
+                                    >
+                                </label>
+
+
+                                <label>
+                                    Department
+                                    <input name="department">
+                                </label>
+
+
+                                <button
+                                    class="btn primary"
+                                    type="submit"
+                                >
+                                    Create admin
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================= -->
+
+    <footer>
+
+        <div class="wrap">
+
+            © 2026 DigitalBank
+
+            <span>
+                Secure digital banking experience
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ========================================= -->
+    <!-- CUSTOMER / STAFF LOGIN MODAL -->
+    <!-- ========================================= -->
+
+    <div
+        id="login"
+        class="modal"
+    >
+
+        <div class="backdrop"></div>
+
+        <div class="modalCard">
+
+            <button class="close">
+                ×
+            </button>
+
+
+            <span class="eyebrow">
+                WELCOME BACK
+            </span>
+
+            <h2>
+                Sign in
+            </h2>
+
+            <p class="muted">
+                Customer or staff/admin login.
+            </p>
+
+
+            <div class="tabs">
+
+                <button
+                    class="tab active"
+                    data-type="customer"
+                >
+                    Customer
+                </button>
+
+                <button
+                    class="tab"
+                    data-type="staff"
+                >
+                    Staff / Admin
+                </button>
+
+            </div>
+
+
+            <!-- CUSTOMER LOGIN -->
+            <form
+                id="customerLogin"
+                class="form"
+            >
+
+                <label>
+                    Email
+                    <input
+                        type="email"
+                        name="email"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Password
+                    <input
+                        type="password"
+                        name="password"
+                        required
+                    >
+                </label>
+
+
+                <button
+                    class="btn primary"
+                    type="submit"
+                >
+                    Sign in as customer
+                </button>
+
+            </form>
+
+
+            <!-- STAFF LOGIN -->
+            <form
+                id="staffLogin"
+                class="form hidden"
+            >
+
+                <label>
+                    Email
+                    <input
+                        type="email"
+                        name="email"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Password
+                    <input
+                        type="password"
+                        name="password"
+                        required
+                    >
+                </label>
+
+
+                <button
+                    class="btn primary"
+                    type="submit"
+                >
+                    Sign in to staff portal
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- CUSTOMER REGISTRATION MODAL -->
+    <!-- ========================================= -->
+
+    <div
+        id="register"
+        class="modal"
+    >
+
+        <div class="backdrop"></div>
+
+        <div class="modalCard">
+
+            <button class="close">
+                ×
+            </button>
+
+
+            <span class="eyebrow">
+                START YOUR JOURNEY
+            </span>
+
+            <h2>
+                Create customer account
+            </h2>
+
+            <p class="muted">
+                Register first, then complete BVN/KYC and banking setup.
+            </p>
+
+
+            <form
+                id="registerForm"
+                class="form two"
+            >
+
+                <label>
+                    First name
+                    <input
+                        name="firstName"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Last name
+                    <input
+                        name="lastName"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Email
+                    <input
+                        type="email"
+                        name="email"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Phone
+                    <input
+                        name="phone"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Date of birth
+                    <input
+                        type="date"
+                        name="dob"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Password
+                    <input
+                        type="password"
+                        name="password"
+                        minlength="6"
+                        required
+                    >
+                </label>
+
+
+                <button
+                    class="btn primary"
+                    type="submit"
+                >
+                    Create account
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- BANK ACCOUNT CREATION MODAL -->
+    <!-- ========================================= -->
+
+    <div
+        id="account"
+        class="modal"
+    >
+
+        <div class="backdrop"></div>
+
+        <div class="modalCard">
+
+            <button class="close">
+                ×
+            </button>
+
+
+            <span class="eyebrow">
+                BANK ACCOUNT
+            </span>
+
+            <h2>
+                Create bank account
+            </h2>
+
+            <p class="muted">
+                Use your verified KYC details.
+            </p>
+
+
+            <form
+                id="accountForm"
+                class="form"
+            >
+
+                <label>
+                    KYC type
+
+                    <select
+                        name="kycType"
+                        required
+                    >
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option>
+                            BVN
+                        </option>
+
+                        <option>
+                            NIN
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    KYC ID
+
+                    <input
+                        name="kycID"
+                        required
+                    >
+                </label>
+
+
+                <label>
+                    Date of birth
+
+                    <input
+                        type="date"
+                        name="dob"
+                        required
+                    >
+                </label>
+
+
+                <button
+                    class="btn primary"
+                    type="submit"
+                >
+                    Create bank account
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================================= -->
+    <!-- CUSTOMER BALANCE MODAL -->
+    <!-- ========================================= -->
+
+    <div
+        id="customerBalance"
+        class="modal"
+    >
+
+        <div class="backdrop"></div>
+
+        <div class="modalCard">
+
+            <button class="close">
+                ×
+            </button>
+
+
+            <span class="eyebrow">
+                CUSTOMER BALANCES
+            </span>
+
+            <h2 id="customerBalanceTitle">
+                Customer balance
+            </h2>
+
+
+            <div id="customerBalanceList"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MOBILE TRANSFER CONFIRMATION -->
+    <div id="transferConfirm" class="modal transferConfirmModal" aria-hidden="true">
+        <div class="backdrop"></div>
+        <div class="modalCard transferConfirmCard">
+            <button class="close" id="transferConfirmClose" type="button" aria-label="Close transfer confirmation">×</button>
+            <span class="eyebrow">REVIEW TRANSFER</span>
+            <h2>Confirm transfer</h2>
+            <p class="muted">Please review the details before sending.</p>
+            <div class="transferSummary">
+                <div><span>Recipient</span><strong id="confirmRecipient">—</strong></div>
+                <div><span>Account</span><strong id="confirmAccount">—</strong></div>
+                <div><span>Amount</span><strong id="confirmAmount">—</strong></div>
+                <div><span>Fees</span><strong id="confirmFee">₦ 0.00</strong></div>
+                <div class="transferTotal"><span>Total</span><strong id="confirmTotal">—</strong></div>
+            </div>
+            <div class="transferConfirmActions">
+                <button class="btn ghost" id="transferCancelButton" type="button">Cancel</button>
+                <button class="btn primary" id="transferConfirmButton" type="button">Confirm transfer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="app.js"></script>
+
+</body>
+
+</html>
