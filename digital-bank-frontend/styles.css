@@ -1781,6 +1781,7 @@ body.dark {
   opacity: 0.72;
 }
 
+
 .toast:not(.show) {
   display: none;
 }
