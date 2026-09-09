@@ -1773,6 +1773,14 @@ body.dark {
 #confirmBank{max-width:220px;text-align:right;overflow-wrap:anywhere}
 @media(max-width:650px){.interBankFields{padding:12px}.transferConfirmCard{max-height:88vh}.transferSummary>div{gap:12px}.transferSummary strong{max-width:62%;text-align:right;overflow-wrap:anywhere}}
 
+/* Recipient details in transfer history */
+.txRecipientBank {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  opacity: 0.72;
+}
+
 .toast:not(.show) {
   display: none;
 }
